@@ -28,7 +28,7 @@ body {
 
 }
 
-@media (max-width:641px) {
+@media (max-width:649px) {
     .continer {
         width: 300px;
     }
@@ -38,13 +38,13 @@ body {
     }
 
     .part {
-        width: 100%);
+        width: 100%;
     }
 }
 
-@media (min-width:641px) {
+@media (min-width:650px) {
     .continer {
-        width: 300px;
+        width: 600px;
     }
 
     .welcome_text {
@@ -107,6 +107,7 @@ header .continer {
     align-items: end;
     flex-direction: column;
     cursor: pointer;
+    z-index: 3;
 }
 
 .links .contient {
@@ -147,15 +148,6 @@ header .continer {
     position: relative;
 }
 
-.links .link::before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    border: 8px solid transparent;
-    border-bottom-color: #f6f6f6;
-    position: absolute;
-    right: -1px;
-}
 
 .links .link li {
     background-color: #f6f6f6;
@@ -183,6 +175,17 @@ header .continer {
 .links .link li:last-child {
     top: 133px;
 }
+
+.links .link::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border: 8px solid transparent;
+    border-bottom-color: #f6f6f6;
+    position: absolute;
+    right: -1px;
+}
+
 
 /* add visibility and transition to link and the triangle */
 
