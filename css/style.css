@@ -19,18 +19,19 @@ body {
 
 /* continer */
 .continer {
-    width: 600px;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
 
 }
 
-@media (max-width:649px) {
+@media (max-width:370px) {
     .continer {
-        width: 300px;
+        width: 343px;
     }
 
     .welcome_text {
@@ -42,7 +43,7 @@ body {
     }
 }
 
-@media (min-width:650px) {
+@media (min-width:648px) {
     .continer {
         width: 600px;
     }
