@@ -43,6 +43,21 @@ body {
     }
 }
 
+@media (min-width:450px) {
+    .continer {
+        width: 430px;
+    }
+
+    .welcome_text {
+        width: 300px;
+    }
+
+    .part {
+        width: 100%;
+    }
+}
+
+
 @media (min-width:648px) {
     .continer {
         width: 600px;
