@@ -1,0 +1,275 @@
+/* variables */
+:root {
+    --main_color: #10cab7;
+}
+
+/* start global Rules */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/*font */
+body {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* continer */
+.continer {
+    width: 600px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media (max-width:641px) {
+    .continer {
+        width: 300px;
+    }
+
+    .welcome_text {
+        width: 340px;
+    }
+
+    .part {
+        width: 100%);
+    }
+}
+
+@media (min-width:641px) {
+    .continer {
+        width: 300px;
+    }
+
+    .welcome_text {
+        width: 300px;
+    }
+
+    .part {
+        width: calc(100% / 2);
+    }
+}
+
+@media (min-width:892px) {
+    .continer {
+        width: 800px;
+    }
+
+    .welcome_text {
+        width: 700px;
+    }
+
+    .part {
+        width: calc(100% / 3);
+    }
+
+}
+
+@media (min-width:1200px) {
+    .continer {
+        width: 1000px;
+    }
+
+    .welcome_text {
+        width: 900px;
+    }
+}
+
+/* end global Rules */
+
+/* start header */
+header .continer {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* left logo */
+
+.logo {
+    width: 60px;
+    height: 25px;
+}
+
+/*start style links */
+
+/* this contient links and their icon; */
+.links {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.links .contient {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+/* creation link icon */
+.links .contient span {
+    background: #333;
+    height: 3px;
+    width: 100%;
+
+}
+
+/* add transiton to link icon and animation with hover */
+
+.links .contient span:nth-child(2) {
+    width: 50%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.links:hover span:nth-child(2) {
+    width: 100%;
+}
+
+/*creat link list and the triangle */
+.links .link {
+    list-style: none;
+    color: #333;
+    position: relative;
+}
+
+.links .link::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border: 8px solid transparent;
+    border-bottom-color: #f6f6f6;
+    position: absolute;
+    right: -1px;
+}
+
+.links .link li {
+    background-color: #f6f6f6;
+    margin-bottom: 1px;
+    position: absolute;
+    right: -1px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.links .link li:first-child {
+    top: 15px;
+}
+
+.links .link li:nth-child(2) {
+    top: 55px;
+}
+
+.links .link li:nth-child(3) {
+    top: 94px;
+}
+
+.links .link li:last-child {
+    top: 133px;
+}
+
+/* add visibility and transition to link and the triangle */
+
+.links .link::before,
+.links .link li {
+    visibility: hidden;
+    transition: visibility 0.2s, padding 0.6s;
+    -webkit-transition: visibility 0.2s, padding 0.6s;
+    -moz-transition: visibility 0.2s, padding 0.6s;
+    -ms-transition: visibility 0.2s, padding 0.6s;
+    -o-transition: visibility 0.2s, padding 0.6s;
+}
+
+/* add animation with hover to link */
+
+.links .link li:hover {
+    padding-left: 20px;
+}
+
+.links:hover .link::before,
+.links:hover .link li {
+    visibility: visible;
+}
+
+/* end header */
+
+/* add welcome section  */
+.welcome {
+    height: calc(100vh - 55px);
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+}
+
+.welcome h1 {
+    color: var(--main_color);
+    font-weight: 800;
+    font-size: 46px;
+}
+
+.welcome p {
+    margin: 0;
+    color: #222;
+    font-size: 19px;
+    font-weight: 100;
+    line-height: 1.5;
+    word-spacing: 3px;
+}
+
+/* position of the text */
+
+.welcome_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+/* end welcome section */
+
+/* strat under welcome section */
+.under-welc {
+    background-color: #eee;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.4%;
+    padding-top: 10%;
+}
+
+h3 {
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.green_icon {
+    color: var(--main_color);
+    font-size: 60px;
+}
