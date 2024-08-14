@@ -1,6 +1,8 @@
 /* variables */
 :root {
     --main_color: #10cab7;
+    --seconde_color: #ebeced;
+    --third_color: #2c4755;
 }
 
 /* start global Rules */
@@ -8,6 +10,10 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 /*font */
@@ -28,8 +34,13 @@ body {
     margin-right: auto;
 
 }
-
-@media (max-width:370px) {
+/* frame work for special title */
+.spec_head{
+    font-weight: 800;
+    color: var(--seconde_color);
+    margin-bottom:0;
+}
+@media (min-width:1px) {
     .continer {
         width: 343px;
     }
@@ -40,6 +51,18 @@ body {
 
     .part {
         width: 100%;
+    }
+
+    .box_Services figure{
+        display: none;
+    }
+
+    .spec_head{
+        font-size: 62px;
+    }
+
+    #services header p{
+        font-size: 15px;
     }
 }
 
@@ -54,6 +77,17 @@ body {
 
     .part {
         width: 100%;
+    }
+
+    .box_Services figure{
+        display: none;
+    }
+    .spec_head{
+        font-size: 62px;
+    }
+
+    #services header p{
+        font-size: 15px;
     }
 }
 
@@ -70,6 +104,20 @@ body {
     .part {
         width: calc(100% / 2);
     }
+
+    .box_Services figure{
+        display: none;
+    }
+    .spec_head{
+        font-size: 100px;
+    }
+
+    #services header p{
+        font-size: 20px;
+    }
+    
+
+    
 }
 
 @media (min-width:892px) {
@@ -85,16 +133,42 @@ body {
         width: calc(100% / 3);
     }
 
+    .box_Services{
+        display: grid;
+        grid-template-areas: "gra_des web_des " "ui_ux web_dev ";
+        column-gap: 70px;
+
+    }
+
+    .box_Services figure{
+        display: none;
+    }
+
+    
+
 }
 
 @media (min-width:1200px) {
     .continer {
-        width: 1000px;
+        width: 1150px;
     }
 
     .welcome_text {
         width: 900px;
     }
+    
+    .box_Services figure{
+        display: block;
+    }
+
+    .box_Services{
+        display: grid;
+        grid-template-areas: "gra_des web_des serv_image" "ui_ux web_dev serv_image";
+        column-gap: 70px;
+
+    }
+    
+
 }
 
 /* end global Rules */
@@ -173,7 +247,10 @@ header .continer {
     padding: 10px;
     width: 120px;
     text-align: center;
+}
+.links .link li a{
     text-decoration: none;
+    color: var(--third_color);
 }
 
 .links .link li:first-child {
@@ -279,9 +356,15 @@ header .continer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.4%;
+    padding: 1%;
     padding-top: 10%;
+    padding-bottom: 10%;
 }
+
+.green_icon:hover ,h3:hover{
+    scale: 1.2;
+}
+
 
 h3 {
     text-transform: capitalize;
@@ -292,3 +375,108 @@ h3 {
     color: var(--main_color);
     font-size: 60px;
 }
+/* end under welcome */
+/* start Services section */
+/* services head */
+#services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#services header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#services header p{
+    margin-top: 0;
+    position: relative;
+    top: -24px;
+}
+
+/* services body */
+.box_Services{
+    padding: 15px;
+    margin: 30px;
+    margin-left: 50px;
+}
+.serv{
+    position: relative;
+}
+.serv .head {
+    display: flex;
+}
+
+.serv p{
+    margin: 0;
+}
+
+.serv .fa-brands, .serv .fa-solid{
+    color: var(--main_color);
+    position: absolute;
+    font-size: 30px;
+    
+}
+
+.serv .left{
+    left: -40px;
+    top: 35px;
+}
+
+.serv .right{
+    left: -40px;
+    top: 35px;
+}
+
+
+.serv h4 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.gra_des{
+    grid-area: gra_des;
+}
+.web_dev{
+    grid-area: web_dev;
+}
+.ui_ux{
+    grid-area: ui_ux;
+}
+.gra_des{
+    grid-area: gra_des;
+}
+.serv_image{
+    grid-area: serv_image;
+    position:relative
+}
+
+.serv_image::after{
+    content: "";
+    background-color: var(--third_color);
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+    z-index: -1;
+}
+
+
+.serv_image{
+    position: relative;
+    left: -79px;
+    top: -260px;
+}
+.serv_image img{
+    width: 204px;
+    position: absolute;
+    right: -121px;
+    top: 22px;
+}
+
+
+
