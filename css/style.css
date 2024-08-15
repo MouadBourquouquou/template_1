@@ -1,7 +1,8 @@
 /* variables */
 :root {
     --main_color: #10cab7;
-    --seconde_color: #ebeced;
+    --titles_color: #ebeced;
+    --seconde_color: #f6f6f6;
     --third_color: #2c4755;
 }
 
@@ -37,7 +38,7 @@ body {
 /* frame work for special title */
 .spec_head{
     font-weight: 800;
-    color: var(--seconde_color);
+    color: var(--titles_color);
     margin-bottom:0;
 }
 @media (min-width:1px) {
@@ -61,8 +62,14 @@ body {
         font-size: 62px;
     }
 
-    #services header p{
+    :is(#services , #portfolio) header p{
         font-size: 15px;
+    }
+
+    .box_portfolio{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 25px;
     }
 }
 
@@ -86,7 +93,7 @@ body {
         font-size: 62px;
     }
 
-    #services header p{
+    :is(#services , #portfolio) header p{
         font-size: 15px;
     }
 }
@@ -112,8 +119,14 @@ body {
         font-size: 100px;
     }
 
-    #services header p{
+    :is(#services , #portfolio) header p{
         font-size: 20px;
+    }
+
+    .box_portfolio{
+        display: grid;
+        grid-template-columns: repeat(2,calc(50% - 25px));
+        gap: 25px;
     }
     
 
@@ -143,7 +156,6 @@ body {
     .box_Services figure{
         display: none;
     }
-
     
 
 }
@@ -166,6 +178,12 @@ body {
         grid-template-areas: "gra_des web_des serv_image" "ui_ux web_dev serv_image";
         column-gap: 70px;
 
+    }
+
+    .box_portfolio{
+        display: grid;
+        grid-template-columns: repeat(3,30%);
+        gap: 25px;
     }
     
 
@@ -240,7 +258,7 @@ header .continer {
 
 
 .links .link li {
-    background-color: #f6f6f6;
+    background-color: var(--seconde_color);
     margin-bottom: 1px;
     position: absolute;
     right: -1px;
@@ -274,7 +292,7 @@ header .continer {
     width: 0px;
     height: 0px;
     border: 8px solid transparent;
-    border-bottom-color: #f6f6f6;
+    border-bottom-color: var(--seconde_color);
     position: absolute;
     right: -1px;
 }
@@ -345,7 +363,7 @@ header .continer {
 
 /* strat under welcome section */
 .under-welc {
-    background-color: #eee;
+    background-color: var(--seconde_color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -361,7 +379,7 @@ header .continer {
     padding-bottom: 10%;
 }
 
-.green_icon:hover ,h3:hover{
+.green_icon:hover {
     scale: 1.2;
 }
 
@@ -378,32 +396,35 @@ h3 {
 /* end under welcome */
 /* start Services section */
 /* services head */
-#services{
+:is(#services , #portfolio){
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-#services header{
+
+:is(#services , #portfolio) header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#services header p{
+:is(#services , #portfolio) header p{
     margin-top: 0;
     position: relative;
     top: -24px;
 }
 
 /* services body */
-.box_Services{
+.box_Services,.box_portfolio{
     padding: 15px;
     margin: 30px;
     margin-left: 50px;
 }
+
 .serv{
     position: relative;
 }
+
 .serv .head {
     display: flex;
 }
@@ -440,15 +461,19 @@ h3 {
 .gra_des{
     grid-area: gra_des;
 }
+
 .web_dev{
     grid-area: web_dev;
 }
+
 .ui_ux{
     grid-area: ui_ux;
 }
+
 .gra_des{
     grid-area: gra_des;
 }
+
 .serv_image{
     grid-area: serv_image;
     position:relative
@@ -465,18 +490,32 @@ h3 {
     z-index: -1;
 }
 
-
 .serv_image{
     position: relative;
     left: -79px;
     top: -260px;
 }
+
 .serv_image img{
     width: 204px;
     position: absolute;
     right: -121px;
     top: 22px;
 }
+/* end Service section */
 
+/* start Portfolio section */
+#portfolio{
+    background-color: #f6f6f6;
+}
+.project img{
+    width: 100%;
+}
+.project .text{
+    padding: 15px;
+    background-color: white;
+}
+
+/* end Porfolio section */
 
 
