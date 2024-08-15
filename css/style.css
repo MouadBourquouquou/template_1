@@ -71,6 +71,29 @@ body {
         grid-template-columns: 100%;
         gap: 25px;
     }
+
+    .box_about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box_about hr{
+        width: 50%;
+        margin-left: auto;
+    }
+
+    .box_about .text{
+        width: 130%;
+    }
+    
+    .box_about figure{
+        width: 50%;
+    }
+
+    .box_contact p{
+        font-size: 17px;
+    }
 }
 
 @media (min-width:450px) {
@@ -95,6 +118,14 @@ body {
 
     :is(#services , #portfolio) header p{
         font-size: 15px;
+    }
+
+    .box_about .text{
+        width: 100%;
+    }
+
+    .box_contact p{
+        font-size: 23px;
     }
 }
 
@@ -128,9 +159,10 @@ body {
         grid-template-columns: repeat(2,calc(50% - 25px));
         gap: 25px;
     }
-    
 
-    
+    .box_contact p{
+        font-size: 30px;
+    }
 }
 
 @media (min-width:892px) {
@@ -155,6 +187,52 @@ body {
 
     .box_Services figure{
         display: none;
+    }
+
+    .box_about{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .box_about .text{
+        width: 50%;
+    }
+
+    .box_about hr{
+        width: 50%;
+        margin-left: 0;
+    }
+
+    .box_about figure{
+        width: 25%;
+    }
+    
+
+    .box_about figure::before{
+        content: "";
+        background-color: var(--titles_color);
+        position: absolute;
+        top: -25px;
+        left: -20px;
+        width: 100px;
+        height: 115%;
+        z-index: -1;
+    
+    }
+    
+    .box_about figure::after{
+        content: "";
+        border-left: 80px solid var(--main_color);
+        border-bottom: 80px solid var(--main_color);
+        position: absolute;
+        top: -8%;
+        left: 80%;
+        width: 30%;
+        height: 95%;
+        z-index: -1;
+    
     }
     
 
@@ -184,6 +262,31 @@ body {
         display: grid;
         grid-template-columns: repeat(3,30%);
         gap: 25px;
+    }
+
+    .box_about figure::before{
+        content: "";
+        background-color: var(--titles_color);
+        position: absolute;
+        top: -35px;
+        left: -20px;
+        width: 100px;
+        height: 115%;
+        z-index: -1;
+    
+    }
+    
+    .box_about figure::after{
+        content: "";
+        border-left: 90px solid var(--main_color);
+        border-bottom: 90px solid var(--main_color);
+        position: absolute;
+        top: -7%;
+        left: 80%;
+        width: 30%;
+        height: 90%;
+        z-index: -1;
+    
     }
     
 
@@ -310,10 +413,19 @@ header .continer {
     -o-transition: visibility 0.2s, padding 0.6s;
 }
 
+.links .link li a{
+    transition: padding 0.6s;
+    -webkit-transition: padding 0.6s;
+    -moz-transition: padding 0.6s;
+    -ms-transition: padding 0.6s;
+    -o-transition: padding 0.6s;
+}
+
 /* add animation with hover to link */
 
-.links .link li:hover {
+.links .link li a:hover {
     padding-left: 20px;
+    color: var(--main_color);
 }
 
 .links:hover .link::before,
@@ -402,7 +514,7 @@ h3 {
     justify-content: center;
 }
 
-:is(#services , #portfolio) header{
+:is(#services , #portfolio, #about, #contact) header{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -518,4 +630,82 @@ h3 {
 
 /* end Porfolio section */
 
+/* strat about section */
+
+.box_about{
+    margin: 70px;
+}
+
+.box_about .text{
+    padding-left: 10px;
+    padding-top: 5%;
+    line-height: 2;
+    letter-spacing: 1.5px;
+}
+
+.box_about hr{
+    background-color: var(--main_color);
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+.box_about figure{
+    position: relative;
+}
+
+.box_about figure img{
+    width: 100%;
+}
+
+/* end about section */
+/* start contact section  */
+
+#contact{
+    padding-bottom: 110px;
+    background-color: var(--seconde_color);
+}
+.box_contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box_contact p:first-of-type{
+    color: var(--third_color);
+    font-weight: 800;
+    padding-top: 100px;
+}
+.box_contact p:nth-child(2) a{
+    color: var(--main_color);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.box_contact .cont{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.box_contact .cont a{
+    width: 15px;
+    height: 15px;
+}
+.box_contact .cont span{
+   position: relative;
+   top: 10px;
+}
+
+/* end contact section */
+footer{
+    background-color: var(--third_color);
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+footer p span{
+    font-weight: 600;
+    color: var(--main_color);
+}
 
